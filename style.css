@@ -367,6 +367,48 @@ a {
   animation: fadeUp 0.9s ease 0.75s forwards;
 }
 
+.masthead-bio {
+  max-width: 720px;
+  margin: 28px auto 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.7s forwards;
+}
+
+.masthead-bio p {
+  margin-bottom: 18px;
+}
+
+.masthead-bio p strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.masthead-facts {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 22px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.masthead-facts li span {
+  display: block;
+  font-family: var(--gothic);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 2px;
+}
+
 /* Buttons */
 .btn {
   font-family: var(--gothic);
