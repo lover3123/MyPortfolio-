@@ -92,6 +92,14 @@
           <a href="#projects" class="btn btn-primary">Browse the Exhibits</a>
           <a href="#contact" class="btn btn-outline">Send a Wire</a>
         </div>
+        <nav class="masthead-index" aria-label="In this edition">
+          <a href="#about"><span>Page 1</span><strong>About the Author</strong></a>
+          <a href="#skills"><span>Page 2</span><strong>The Index</strong></a>
+          <a href="#projects"><span>Page 3</span><strong>On Display This Week</strong></a>
+          <a href="#designs"><span>Page 4</span><strong>Selected Visual Work</strong></a>
+          <a href="#education"><span>Page 5</span><strong>The Record</strong></a>
+          <a href="#contact"><span>Page 6</span><strong>Letters to the Editor</strong></a>
+        </nav>
       </div>
       <a href="#about" class="scroll-cue" aria-label="Scroll down to the first article">
         <span class="scroll-cue-text">Turn the page</span>
@@ -122,44 +130,62 @@
       <section id="about" class="article">
         <div class="container">
           <div class="rule rule-draw" aria-hidden="true"></div>
-          <div class="article-grid">
-            <div class="section-head">
-              <p class="dateline">BENGALURU — ABOUT THE AUTHOR</p>
-              <h2>Design-minded, detail-driven</h2>
-              <p class="lead">
-                I'm a Computer Engineering student with a passion for UI/UX design and frontend
-                development — reporting from the intersection where design and code meet.
-              </p>
-            </div>
-            <div class="article-body">
-              <p>
+          <div class="section-head">
+            <p class="dateline">BENGALURU — ABOUT THE AUTHOR</p>
+            <h2>Design-minded, detail-driven</h2>
+            <p class="byline">By Rohan Rajbanshi <span>Desk report · Filed under design &amp; code</span></p>
+            <p class="lead">
+              I'm a Computer Engineering student with a passion for UI/UX design and frontend
+              development — reporting from the intersection where design and code meet.
+            </p>
+          </div>
+          <div class="about-grid">
+            <div class="about-story">
+              <p class="dropcap">
                 As a UI Designer at Diseño Divino, the NMIT club, I help shape interfaces and visual
                 systems for student projects. I spend my days moving between Figma frames, a code
-                editor, and open-source learning.
+                editor, and open-source learning — treating every screen as a page to be set, edited,
+                and proofread.
               </p>
-              <div class="fact-sheet">
-                <h3>Fact sheet</h3>
-                <dl>
-                  <div>
-                    <dt>Role</dt>
-                    <dd>UI Designer, Diseño Divino NMIT Club</dd>
-                  </div>
-                  <div>
-                    <dt>Degree</dt>
-                    <dd>B.Tech. Computer Engineering</dd>
-                  </div>
-                  <div>
-                    <dt>Currently</dt>
-                    <dd>NMIT · Aug 2024 — Sep 2028</dd>
-                  </div>
-                  <div>
-                    <dt>Focus</dt>
-                    <dd>UI/UX, web development, open source</dd>
-                  </div>
-                </dl>
-              </div>
+              <p>
+                My approach borrows from editorial craft: strong hierarchy, clear columns, and a
+                deliberate rhythm that lets people find what they need without being told where to
+                look. Whether it's a dashboard, a storefront, or a prototype, the goal is the same —
+                useful structure you can read at a glance.
+              </p>
+              <blockquote class="pullquote">
+                “A good interface is invisible — the reader notices only the story, not the type.”
+                <span class="pq-attr">— Desk note, Vol. I</span>
+              </blockquote>
+              <p>
+                Outside the studio I keep the press running with web fundamentals and data tools,
+                always chasing that moment when a rough idea finally sets into a clean, shipped
+                interface.
+              </p>
             </div>
+            <aside class="fact-sheet">
+              <h3>Fact sheet</h3>
+              <dl>
+                <div>
+                  <dt>Role</dt>
+                  <dd>UI Designer, Diseño Divino NMIT Club</dd>
+                </div>
+                <div>
+                  <dt>Degree</dt>
+                  <dd>B.Tech. Computer Engineering</dd>
+                </div>
+                <div>
+                  <dt>Currently</dt>
+                  <dd>NMIT · Aug 2024 — Sep 2028</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt>
+                  <dd>UI/UX, web development, open source</dd>
+                </div>
+              </dl>
+            </aside>
           </div>
+          <div class="endmark" aria-hidden="true">❧</div>
         </div>
       </section>
 
@@ -170,6 +196,7 @@
           <div class="section-head">
             <p class="dateline">THE INDEX — TOOLS OF THE TRADE</p>
             <h2>What I work with</h2>
+            <p class="byline">By Rohan Rajbanshi <span>Indexed across three departments</span></p>
             <p class="lead">
               A mix of programming, design, and engineering skills filed under three departments.
             </p>
@@ -286,14 +313,15 @@
           <div class="section-head">
             <p class="dateline">GALLERY — SELECTED WORK</p>
             <h2>On display this week</h2>
+            <p class="byline">By Rohan Rajbanshi <span>Case files, not screenshots</span></p>
             <p class="lead">
               Selected work from the archive — each exhibit is a case file, not just a screenshot.
             </p>
           </div>
 
           <div class="exhibits">
-            <article class="exhibit">
-              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />01</div>
+            <article class="exhibit exhibit-featured">
+              <div class="exhibit-stamp" aria-hidden="true">Lead<br />Story</div>
               <div class="exhibit-cover cover-bazaar">
                 <img src="assets/images/bazaar.png" alt="Bazaar e-commerce storefront screenshot" />
               </div>
@@ -317,7 +345,7 @@
             </article>
 
             <article class="exhibit">
-              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />02</div>
+              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />01</div>
               <div class="exhibit-cover cover-site" aria-hidden="true">G</div>
               <div class="exhibit-body">
                 <p class="exhibit-meta">Web App — Filed 2026</p>
@@ -339,7 +367,7 @@
             </article>
 
             <article class="exhibit">
-              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />03</div>
+              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />02</div>
               <div class="exhibit-cover cover-site" aria-hidden="true">W</div>
               <div class="exhibit-body">
                 <p class="exhibit-meta">Web App — Filed 2026</p>
@@ -371,6 +399,7 @@
               </div>
             </article>
           </div>
+          <div class="endmark" aria-hidden="true">❧</div>
         </div>
       </section>
 
@@ -381,6 +410,7 @@
           <div class="section-head">
             <p class="dateline">THE DESIGN DESK — BEHANCE ARCHIVE</p>
             <h2>Selected visual work</h2>
+            <p class="byline">By Rohan Rajbanshi <span>From the design desk archive</span></p>
             <p class="lead">
               A separate design archive for UI/UX, visual systems, and interface explorations.
             </p>
@@ -438,6 +468,7 @@
           <div class="section-head">
             <p class="dateline">THE RECORD — EDUCATION</p>
             <h2>Where I study</h2>
+            <p class="byline">By Rohan Rajbanshi <span>On the academic register</span></p>
           </div>
           <div class="record-card">
             <div class="record-year" aria-hidden="true">'26</div>
@@ -451,6 +482,7 @@
               </p>
             </div>
           </div>
+          <div class="endmark" aria-hidden="true">❧</div>
         </div>
       </section>
 
@@ -461,6 +493,7 @@
           <div class="section-head">
             <p class="dateline">KNOWN WHEREABOUTS — EXPERIENCE &amp; CREDENTIALS</p>
             <h2>The career ledger</h2>
+            <p class="byline">By Rohan Rajbanshi <span>Verified on the record</span></p>
             <p class="lead">A short record of the places, programs, and milestones shaping the work.</p>
           </div>
           <div class="ledger-grid">

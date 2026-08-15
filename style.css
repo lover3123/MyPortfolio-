@@ -56,9 +56,9 @@ a {
 }
 
 .container {
-  max-width: 1060px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
 }
 
 /* ----------------------------------------------------------
@@ -136,9 +136,9 @@ a {
 }
 
 .nav-inner {
-  max-width: 1060px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 14px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1444,6 +1444,187 @@ footer {
 }
 
 /* ----------------------------------------------------------
+   Newspaper density — rules, columns, bylines, ornaments
+   ---------------------------------------------------------- */
+body {
+  text-rendering: optimizeLegibility;
+}
+
+.article-body p,
+.about-story p,
+.masthead-deck,
+.exhibit-body > p:not(.exhibit-meta),
+.ledger-entry p:not(.ledger-date),
+.record-note {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Byline under each headline — the classic "By …" credit line */
+.byline {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+  margin: 18px 0 0;
+  max-width: 640px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-head.center .byline {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* About: headline on top, then a 2-column story beside a fact rail */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.about-story {
+  column-count: 2;
+  column-gap: 44px;
+  column-rule: 1px solid var(--line);
+  font-size: 18.5px;
+}
+
+.about-story p {
+  margin-bottom: 18px;
+}
+
+.about-story .dropcap::first-letter {
+  font-family: var(--serif);
+  font-size: 4.2em;
+  font-weight: 700;
+  line-height: 0.85;
+  float: left;
+  padding-right: 10px;
+  color: var(--stamp);
+}
+
+/* Pull quote — spans all columns, like a lifted quote in a newspaper */
+.pullquote {
+  column-span: all;
+  margin: 26px 0 24px;
+  padding: 22px 30px;
+  border-top: 3px double var(--ink);
+  border-bottom: 3px double var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--ink);
+}
+
+.pullquote .pq-attr {
+  display: block;
+  margin-top: 14px;
+  font: 500 10px/1.4 var(--mono);
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stamp);
+}
+
+/* End-of-article ornament */
+.endmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 56px;
+  color: var(--stamp);
+  font-size: 15px;
+}
+
+.endmark::before,
+.endmark::after {
+  content: "";
+  height: 1px;
+  width: min(120px, 22vw);
+  background: var(--line);
+}
+
+/* Masthead index strip — the "In this edition" summary under the title */
+.masthead-index {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.85s forwards;
+}
+
+.masthead-index a {
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-left: 2px solid var(--stamp);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.masthead-index a:hover {
+  background: var(--paper-deep);
+  transform: translateX(4px);
+}
+
+.masthead-index span {
+  display: block;
+  font: 500 10px/1.4 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 3px;
+}
+
+.masthead-index strong {
+  font: 600 15px/1.2 var(--serif);
+  color: var(--ink);
+}
+
+/* Featured (lead) exhibit — spans the full row like a front-page lead story */
+.exhibit-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.exhibit-featured .exhibit-cover {
+  height: 100%;
+  min-height: 260px;
+  margin-bottom: 0;
+}
+
+/* Tighten the vertical rhythm so the page feels fuller */
+.article {
+  padding: 72px 0 88px;
+}
+
+.section-head h2 {
+  margin: 12px 0 8px;
+}
+
+
+/* ----------------------------------------------------------
    Responsive
    ---------------------------------------------------------- */
 @media (max-width: 900px) {
@@ -1463,6 +1644,20 @@ footer {
 
   .ledger-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-grid,
+  .exhibit-featured {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-story {
+    column-count: 1;
+  }
+
+  .exhibit-featured .exhibit-cover {
+    min-height: 200px;
   }
 }
 

@@ -146,7 +146,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // Scroll reveal animations (skipped for reduced motion)
 // ----------------------------------------------------------
 const revealTargets = document.querySelectorAll(
-  ".section-head, .article-grid > *, .skill-card, .education-card, .record-card, .exhibit, .contact-card, .ledger-entry, .credentials-card"
+  ".section-head, .article-grid > *, .about-grid > *, .skill-card, .education-card, .record-card, .exhibit, .contact-card, .ledger-entry, .credentials-card"
 );
 
 // Skill field menu: cards inherit the department label that precedes them.
