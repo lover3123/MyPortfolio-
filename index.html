@@ -1,162 +1,422 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Rohan Rajbanshi - Portfolio</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <script src="./script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Rohan Rajbanshi — UI/UX designer and frontend developer, Computer Science and Engineering student at NMIT. A newspaper-style edition of selected work."
+    />
+    <title>Rohan Rajbanshi — The Morning Brief</title>
+    <link rel="icon" href="assets/images/flash.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <nav>
-      <div id="home">
-        <div class="profile_name">
-          Rohan Rajbanshi
-          <div class="contact_info">
-            <img src="html_finalprojimages/envelope.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
-          jdoe@jeemail.com
-        </div>
-        <div style="clear:both;"></div>
-        <div class="contact_info">
-          <img src="html_finalprojimages/phone.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
-          +13456764598
+    <div class="intro-curtain" id="introCurtain">
+      <div class="intro-curtain__inner">
+        <p class="intro-kicker">The Morning Brief · Vol. I</p>
+        <p class="intro-title">Take the glass.<br /><em>Find the subject.</em></p>
+        <div class="intro-line" aria-hidden="true"><span></span></div>
+        <button class="intro-skip" id="introSkip" type="button">Skip intro <span>→</span></button>
+      </div>
+    </div>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-        </div>
-        <div class="social_links">
-          <a href="https://github.com/lover3123" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/rohan-rajbanshi-773882386/" target="_blank">LinkedIn</a>
-        </div>
-        </div>
-        <div class="topdiv">
-          <a class="topmenu" href="#about-me">About Me</a>
-          <a class="topmenu" href="#skills">Skills</a>
-          <a class="topmenu" href="#projects">Projects</a>
-          <a class="topmenu" href="#education">Education</a>
+    <!-- Cursor glow (desktop only) -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-        </div>
-      </div>    
+    <!-- ===== Navigation ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#home" class="brand">Rohan <span>Rajbanshi</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Index</a></li>
+          <li><a href="#projects">Exhibits</a></li>
+          <li><a href="#education">Record</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
-    <!-- About Me -->
-    <section id="about-me" class="container">
-      <div>
-        <img src="https://miro.medium.com/max/1400/1*qdAW1TjCN57h1lbuuzvchg.gif" class="profile_image"/>
+    <!-- ===== Masthead ===== -->
+    <header id="home" class="masthead">
+      <div class="container">
+        <p class="masthead-meta">
+          <span id="mastheadDate"></span>
+          <span class="masthead-dot" aria-hidden="true"></span>
+          Bengaluru, India
+          <span class="masthead-dot" aria-hidden="true"></span>
+          Vol. I — No. 01
+        </p>
+        <h1 class="masthead-title">
+          <span class="mt-line"><span class="word">The</span></span>
+          <span class="mt-line"><span class="word">Morning</span></span>
+          <span class="mt-line"><span class="word">Brief</span></span>
+        </h1>
+        <p class="masthead-deck">
+          A personal record from the desk of <strong>Rohan Rajbanshi</strong> — a UI/UX designer and
+          frontend developer building useful things from rough idea to shipped interface.
+        </p>
+        <div class="masthead-actions">
+          <a href="#projects" class="btn btn-primary">Browse the Exhibits</a>
+          <a href="#contact" class="btn btn-outline">Send a Wire</a>
+        </div>
       </div>
-
-      <div>
-          <h1>
-            Hi, I'm Rohan Rajbanshi! <img src="html_finalprojimages/waving-hand.png" width="60px"/>
-          </h1>
-          <p>
-            I am a Computer Science and Engineering student with experience in UI/UX design. I am an active member of the Designo Devino Club at NMIT, where I serve as a UI/UX designer. Currently, I am working on frontend projects.
-          </p>
-      </div>
-    </section>
-              
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div style="clear:both;"></div>
-
-      <div class="all_skills">
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>Python</h6>
-          <p>Experience in programming</p>
-        </div>  
-
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>C Programming</h6>
-          <p>Experience in programming</p>
-        </div>  
-
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>Java</h6>
-          <p>Experience in programming</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>C#</h6>
-          <p>Experience in programming</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>Data Structures in C</h6>
-          <p>Experience in programming</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>Design in Figma/Canvas</h6>
-          <p>UI/UX Design</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>Frontend: HTML/CSS/JavaScript</h6>
-          <p>Web Development</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>CAD Design</h6>
-          <p>Engineering Design</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>Electronics</h6>
-          <p>CS Core</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>Basics of Mechanical</h6>
-          <p>Engineering Knowledge</p>
-        </div>
-
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>Sustainable Development</h6>
-          <p>Focus Area</p>
-        </div>
-
-      </div>
-    </section>
-          
-    <!-- Projects -->
-    <section class="projects" id="projects">
-      <h2>
-        Projects
-      </h2>
-      <div style="clear:both;"></div>
-
-        <div id="projects-container" class="projects-container">
-          <div class="project-card">
-            <h3>Tesla Vehicle Design</h3>
-            <ul>
-              <li>Designed a Tesla vehicle from scratch, focusing on innovative UI/UX and frontend elements.</li>
-            </ul>
-          </div>
-        </div>
-    </section>
-    <div style="clear:both;"></div>
-
-    <!-- Education -->
-    <section id="education">
-      <h2>Education</h2>
-      <div style="clear:both;"></div>
-      <p>Computer Science and Engineering at Nitte Meenakshi Institute of Technology</p>
-    </section>
-
-    <div class="iconbutton">
-      <a href="#home">
-        <!--Add the code here for the logo to appear and the icon to be actionable-->
+      <a href="#about" class="scroll-cue" aria-label="Scroll down to the first article">
+        <span class="scroll-cue-text">Turn the page</span>
+        <span class="scroll-cue-line"></span>
       </a>
+    </header>
+
+    <!-- ===== Ticker ===== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <span>UI/UX Design</span><span class="ticker-star">✦</span>
+        <span>Frontend Development</span><span class="ticker-star">✦</span>
+        <span>Figma &amp; Canva</span><span class="ticker-star">✦</span>
+        <span>HTML · CSS · JavaScript</span><span class="ticker-star">✦</span>
+        <span>Product Design</span><span class="ticker-star">✦</span>
+        <span>Designo Devino Club</span><span class="ticker-star">✦</span>
+        <span>UI/UX Design</span><span class="ticker-star">✦</span>
+        <span>Frontend Development</span><span class="ticker-star">✦</span>
+        <span>Figma &amp; Canva</span><span class="ticker-star">✦</span>
+        <span>HTML · CSS · JavaScript</span><span class="ticker-star">✦</span>
+        <span>Product Design</span><span class="ticker-star">✦</span>
+        <span>Designo Devino Club</span><span class="ticker-star">✦</span>
+      </div>
     </div>
 
+    <main>
+      <!-- ===== Article: About ===== -->
+      <section id="about" class="article">
+        <div class="container">
+          <div class="rule rule-draw" aria-hidden="true"></div>
+          <div class="article-grid">
+            <div class="section-head">
+              <p class="dateline">BENGALURU — ABOUT THE AUTHOR</p>
+              <h2>Design-minded, detail-driven</h2>
+              <p class="lead">
+                I'm a Computer Science and Engineering student with a passion for UI/UX design and
+                frontend development — reporting from the intersection where design and code meet.
+              </p>
+            </div>
+            <div class="article-body">
+              <p>
+                As a UI/UX designer at the Designo Devino Club at NMIT, I help shape the look and
+                feel of student projects — from early wireframes to shipped interfaces. I spend my
+                days moving between Figma frames and a code editor, and my nights reading up on
+                sustainable technology.
+              </p>
+              <div class="fact-sheet">
+                <h3>Fact sheet</h3>
+                <dl>
+                  <div>
+                    <dt>Role</dt>
+                    <dd>UI/UX Designer, Designo Devino Club</dd>
+                  </div>
+                  <div>
+                    <dt>Degree</dt>
+                    <dd>B.E. Computer Science &amp; Engineering</dd>
+                  </div>
+                  <div>
+                    <dt>Currently</dt>
+                    <dd>Building frontend projects</dd>
+                  </div>
+                  <div>
+                    <dt>Focus</dt>
+                    <dd>UI/UX, web development, sustainable tech</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Article: Skills / Index ===== -->
+      <section id="skills" class="article">
+        <div class="container">
+          <div class="rule rule-draw" aria-hidden="true"></div>
+          <div class="section-head">
+            <p class="dateline">THE INDEX — TOOLS OF THE TRADE</p>
+            <h2>What I work with</h2>
+            <p class="lead">
+              A mix of programming, design, and engineering skills filed under three departments.
+            </p>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-icon">P</div>
+              <div>
+                <h3>Python</h3>
+                <p class="skill-tag">Programming</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">C</div>
+              <div>
+                <h3>C Programming</h3>
+                <p class="skill-tag">Programming</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">J</div>
+              <div>
+                <h3>Java</h3>
+                <p class="skill-tag">Programming</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">C#</div>
+              <div>
+                <h3>C#</h3>
+                <p class="skill-tag">Programming</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">D</div>
+              <div>
+                <h3>Data Structures in C</h3>
+                <p class="skill-tag">Computer Science</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">&lt;/&gt;</div>
+              <div>
+                <h3>HTML, CSS &amp; JavaScript</h3>
+                <p class="skill-tag">Web Development</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">F</div>
+              <div>
+                <h3>Figma &amp; Canva</h3>
+                <p class="skill-tag">UI/UX Design</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">CAD</div>
+              <div>
+                <h3>CAD Design</h3>
+                <p class="skill-tag">Engineering Design</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">⚡</div>
+              <div>
+                <h3>Electronics</h3>
+                <p class="skill-tag">Engineering</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">⚙</div>
+              <div>
+                <h3>Mechanical Basics</h3>
+                <p class="skill-tag">Engineering</p>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">♻</div>
+              <div>
+                <h3>Sustainable Development</h3>
+                <p class="skill-tag">Focus Area</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Article: Projects / Exhibits ===== -->
+      <section id="projects" class="article">
+        <div class="container">
+          <div class="rule rule-draw" aria-hidden="true"></div>
+          <div class="section-head">
+            <p class="dateline">GALLERY — SELECTED WORK</p>
+            <h2>On display this week</h2>
+            <p class="lead">
+              Selected work from the archive — each exhibit is a case file, not just a screenshot.
+            </p>
+          </div>
+
+          <div class="exhibits">
+            <article class="exhibit">
+              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />01</div>
+              <div class="exhibit-cover cover-tesla" aria-hidden="true">T</div>
+              <div class="exhibit-body">
+                <p class="exhibit-meta">Design &amp; Frontend — Filed 2024</p>
+                <h3>Tesla Vehicle Design</h3>
+                <p>
+                  Designed a Tesla vehicle from scratch, focusing on innovative UI/UX and frontend
+                  elements from concept to interface.
+                </p>
+                <div class="exhibit-tags">
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">Frontend</span>
+                  <span class="tag">Product Design</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="exhibit">
+              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />02</div>
+              <div class="exhibit-cover cover-club" aria-hidden="true">D</div>
+              <div class="exhibit-body">
+                <p class="exhibit-meta">Club — Filed 2024</p>
+                <h3>Designo Devino Club</h3>
+                <p>
+                  UI/UX designer for NMIT's design club — shaping interfaces and design systems for
+                  student projects and events.
+                </p>
+                <div class="exhibit-tags">
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">Design Systems</span>
+                  <span class="tag">Club</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="exhibit">
+              <div class="exhibit-stamp" aria-hidden="true">Exhibit<br />03</div>
+              <div class="exhibit-cover cover-site" aria-hidden="true">P</div>
+              <div class="exhibit-body">
+                <p class="exhibit-meta">Web — Filed 2026</p>
+                <h3>This Portfolio</h3>
+                <p>
+                  A responsive single-page portfolio printed in the style of a daily newspaper —
+                  with scroll-driven motion and zero dependencies.
+                </p>
+                <div class="exhibit-tags">
+                  <span class="tag">HTML/CSS/JS</span>
+                  <span class="tag">Responsive</span>
+                  <span class="tag">Motion</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="exhibit exhibit-cta">
+              <div class="exhibit-stamp" aria-hidden="true">Open<br />Call</div>
+              <div class="exhibit-body">
+                <p class="exhibit-meta">Letters to the Editor</p>
+                <h3>Your next project?</h3>
+                <p>
+                  I'm always open to collaborations and new ideas. Let's build something together.
+                </p>
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Article: Education / Record ===== -->
+      <section id="education" class="article">
+        <div class="container">
+          <div class="rule rule-draw" aria-hidden="true"></div>
+          <div class="section-head">
+            <p class="dateline">THE RECORD — EDUCATION</p>
+            <h2>Where I study</h2>
+          </div>
+          <div class="record-card">
+            <div class="record-year" aria-hidden="true">'26</div>
+            <div class="record-body">
+              <span class="record-badge">Currently pursuing</span>
+              <h3>B.E. Computer Science &amp; Engineering</h3>
+              <p class="record-school">Nitte Meenakshi Institute of Technology (NMIT), Bengaluru</p>
+              <p class="record-note">
+                Active member of the Designo Devino Club, contributing as a UI/UX designer to
+                student projects and events.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Article: Contact ===== -->
+      <section id="contact" class="article">
+        <div class="container">
+          <div class="rule rule-draw" aria-hidden="true"></div>
+          <div class="section-head center">
+            <p class="dateline">LETTERS TO THE EDITOR — CONTACT</p>
+            <h2>Send a wire</h2>
+            <p class="lead">Have a question, an idea, or an opportunity? I'd love to hear from you.</p>
+          </div>
+          <div class="contact-grid">
+            <!-- TODO: replace the email below with your real address -->
+            <a class="contact-card" href="mailto:jdoe@jeemail.com">
+              <div class="contact-icon">
+                <img src="assets/images/envelope.png" alt="Email icon" />
+              </div>
+              <h3>Email</h3>
+              <p>jdoe@jeemail.com</p>
+            </a>
+            <a class="contact-card" href="tel:+13456764598">
+              <div class="contact-icon">
+                <img src="assets/images/phone.png" alt="Phone icon" />
+              </div>
+              <h3>Phone</h3>
+              <p>+1 345 676 4598</p>
+            </a>
+            <a class="contact-card" href="https://github.com/lover3123" target="_blank" rel="noopener">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </div>
+              <h3>GitHub</h3>
+              <p>lover3123</p>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/rohan-rajbanshi-773882386/" target="_blank" rel="noopener">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                </svg>
+              </div>
+              <h3>LinkedIn</h3>
+              <p>Rohan Rajbanshi</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Colophon / Footer ===== -->
+    <footer>
+      <div class="container">
+        <p class="footer-brand">The Morning Brief</p>
+        <p class="footer-text">
+          Printed by Rohan Rajbanshi with HTML, CSS &amp; JavaScript · © <span id="year"></span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button id="scrollTop" aria-label="Scroll back to top">↑</button>
+
+    <!-- Motion toggle -->
+    <button
+      class="motion-toggle"
+      id="motionToggle"
+      aria-label="Toggle animations"
+      aria-pressed="false"
+      title="Turn page animations on or off"
+    >
+      <span class="motion-toggle-icon">▶</span>
+      <span class="motion-toggle-label">Motion</span>
+    </button>
+
+    <script src="script.js"></script>
   </body>
 </html>
