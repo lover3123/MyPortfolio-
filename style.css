@@ -702,6 +702,75 @@ a {
   margin-top: 48px;
 }
 
+.skill-category-label {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: baseline;
+  margin-top: 26px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.skill-category-label:first-child {
+  margin-top: 0;
+}
+
+.skill-category-label span {
+  font: 500 11px/1 var(--mono);
+  color: var(--stamp);
+  letter-spacing: .12em;
+}
+
+.skill-category-label strong {
+  font: 600 25px/1 var(--serif);
+}
+
+.skill-category-label small {
+  grid-column: 2;
+  font: 11px/1.4 var(--mono);
+  color: var(--ink-faint);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.skill-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 38px 0 4px;
+}
+
+.skill-filter-button {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  cursor: pointer;
+  font: 500 10px/1 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.skill-filter-button:hover,
+.skill-filter-button.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.skill-card.is-filtered {
+  display: none;
+}
+
+.skill-category-label.is-filtered {
+  display: none;
+}
+
 .skill-card {
   display: flex;
   align-items: center;
@@ -993,6 +1062,70 @@ a {
   max-width: 560px;
 }
 
+/* Career ledger: the missing long-form record section from the reference site. */
+.ledger-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 42px;
+  margin-top: 48px;
+}
+
+.ledger-list {
+  border-top: 2px solid var(--ink);
+}
+
+.ledger-entry {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ledger-date {
+  font: 500 11px/1.4 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--stamp);
+}
+
+.ledger-entry h3,
+.credentials-card h3 {
+  margin: 10px 0 7px;
+  font: 600 25px/1.08 var(--serif);
+}
+
+.ledger-entry p:not(.ledger-date) {
+  color: var(--ink-soft);
+}
+
+.credentials-card {
+  align-self: start;
+  padding: 26px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  transform: rotate(1deg);
+}
+
+.credentials-card ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.credentials-card li {
+  padding: 12px 0 12px 20px;
+  border-top: 1px dotted var(--line);
+  position: relative;
+}
+
+.credentials-card li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--stamp);
+}
+
 /* ----------------------------------------------------------
    Contact
    ---------------------------------------------------------- */
@@ -1260,6 +1393,10 @@ footer {
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .ledger-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1290,6 +1427,15 @@ footer {
   .fact-sheet dl > div {
     grid-template-columns: 1fr;
     gap: 2px;
+  }
+
+  .ledger-entry {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .credentials-card {
+    transform: none;
   }
 
   .masthead {

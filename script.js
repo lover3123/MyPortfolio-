@@ -146,8 +146,44 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // Scroll reveal animations (skipped for reduced motion)
 // ----------------------------------------------------------
 const revealTargets = document.querySelectorAll(
-  ".section-head, .article-grid > *, .skill-card, .education-card, .record-card, .exhibit, .contact-card"
+  ".section-head, .article-grid > *, .skill-card, .education-card, .record-card, .exhibit, .contact-card, .ledger-entry, .credentials-card"
 );
+
+// Skill field menu: cards inherit the department label that precedes them.
+(function setupSkillFilters() {
+  const grid = document.querySelector(".skills-grid");
+  const buttons = document.querySelectorAll(".skill-filter-button");
+  if (!grid || !buttons.length) return;
+
+  let department = "";
+  grid.querySelectorAll(":scope > *").forEach((item) => {
+    if (item.classList.contains("skill-category-label")) {
+      department = item.textContent.toLowerCase().includes("programming")
+        ? "programming"
+        : item.textContent.toLowerCase().includes("design")
+          ? "design"
+          : "engineering";
+      item.dataset.skillDepartment = department;
+    } else if (item.classList.contains("skill-card")) {
+      item.dataset.skillDepartment = department;
+    }
+  });
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.skillFilter;
+      buttons.forEach((control) => {
+        const active = control === button;
+        control.classList.toggle("is-active", active);
+        control.setAttribute("aria-pressed", String(active));
+      });
+      grid.querySelectorAll(":scope > *").forEach((item) => {
+        const matches = filter === "all" || item.dataset.skillDepartment === filter;
+        item.classList.toggle("is-filtered", !matches);
+      });
+    });
+  });
+})();
 
 if ("IntersectionObserver" in window && !reducedMotion) {
   const observer = new IntersectionObserver(
